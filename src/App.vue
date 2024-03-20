@@ -88,7 +88,7 @@ const rootStyle = computed(() => {
   <div class="modal" id="modal" v-if=" system.state.modal" :style="rootStyle">
     <div class="card_modal">
       <div class="close_button">
-          <img @click="store.commit('activeModal', true)" src="@/assets/img/cross.png" alt="">
+          <img @click="store.commit('activeModal', false)" src="@/assets/img/cross.png" alt="">
       </div>
       <div class="content_card" id="content_card">
 

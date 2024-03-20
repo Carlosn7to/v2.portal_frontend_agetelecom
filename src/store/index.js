@@ -1,5 +1,5 @@
 import { createStore } from 'vuex'
-// import createPersistedState from "vuex-persistedstate";
+import createPersistedState from "vuex-persistedstate";
 import Router from "@/router";
 export default createStore({
   state: {
@@ -165,10 +165,16 @@ export default createStore({
       commit('setUserName', '')
       commit('setAuthenticated', false)
       Router.replace('/')
+    },
+    validateToken({ commit }, {token}) {
+
+      if(token === '' || token === undefined) {
+        commit('setAuthenticated', false)
+      }
     }
   },
   modules: {
 
   },
-  // plugins: [createPersistedState()]
+  plugins: [createPersistedState()]
 })

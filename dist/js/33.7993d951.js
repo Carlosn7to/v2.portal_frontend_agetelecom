@@ -1,2 +1,2 @@
 "use strict";(self["webpackChunkportal_v2"]=self["webpackChunkportal_v2"]||[]).push([[33],{6033:function(r,e,t){t.r(e),t.d(e,{default:function(){return p}});var n=t(6768);const a={class:"report_page"};function c(r,e){return(0,n.uX)(),(0,n.CE)("div",a)}var u=t(1241);const s={},o=(0,u.A)(s,[["render",c],["__scopeId","data-v-6c45ed54"]]);var p=o}}]);
-//# sourceMappingURL=33.8c889109.js.map
+//# sourceMappingURL=33.7993d951.js.map

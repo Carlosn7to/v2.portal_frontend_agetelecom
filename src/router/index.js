@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import LoginPage from "@/views/web/LoginPage.vue";
 import {useStore} from "vuex";
 import TestPage from "@/views/web/TestPage.vue";
+import Cookie from "js-cookie";
 
 const routes = [
   {
@@ -52,31 +53,25 @@ const router = createRouter({
   routes
 })
 
-// router.beforeEach((to, from, next) => {
-//   const requiredGroups = to.meta.group || []; // Handle cases without `group` meta
-//   const system = useStore().getters['system'];
-//   const user = useStore().getters['user'];
-//
-//   if (!system.security.authenticated) {
-//     // Se o usuário não estiver autenticado
-//     if (to.path !== '/') {
-//       next('/inicio'); // Redireciona para a página inicial se tentar acessar qualquer outra rota
-//     } else {
-//       next(); // Permite acesso à página inicial se não estiver autenticado
-//     }
-//   } else {
-//
-//     if(to.path === '/') {
-//       next('/inicio');
-//     }
-//     // Se o usuário estiver autenticado
-//     if (requiredGroups.length && !requiredGroups.every(group => user.groups.includes(group))) {
-//       next('/inicio'); // Redireciona para a página inicial se não tiver os grupos necessários
-//     } else {
-//       next(); // Permite acesso se estiver autenticado e tiver os grupos necessários, ou se não forem necessários grupos para acessar a rota
-//     }
-//   }
-//
-// });
+router.beforeEach(async (to, from, next) => {
+  const token = Cookie.get('token');
+  const auth = useStore().getters['system'].security.authenticated;
+
+  if (token) {
+    useStore().dispatch('validateToken', {token});
+  } else {
+    useStore().commit('setAuthenticated', false);
+  }
+
+  if(to.path != '/' && !auth) {
+    next('/');
+  } else if(to.path == '/' && auth) {
+    next('/inicio');
+  } else {
+    next();
+  }
+
+
+});
 
 export default router

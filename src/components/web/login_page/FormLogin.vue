@@ -132,9 +132,12 @@ const submit = () => {
           validateForm.form.responseMsg = "Erro ao tentar se conectar. Tente novamente mais tarde.";
         }
 
+        statusSubmit.value = false
+
       }).finally(() => {
         validateForm.form.step++
 
+        statusSubmit.value = false
 
 
       })
