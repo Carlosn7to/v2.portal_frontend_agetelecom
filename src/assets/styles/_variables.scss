@@ -1,0 +1,66 @@
+/*
+    Structure Colors
+*/
+
+// Background
+$bg-color: var(--bg-color);
+$bg-secondary-color: var(--bg-secondary-color);
+$border-color: var(--border-color);
+$highlight-shadow: var(--highlight-shadow);
+$highlight-bg: var(--highlight-bg);
+$highlight-bg-hover: var(--highlight-bg-hover);
+$highlight-border: var(--highlight-border);
+$highlight-svg: var(--highlight-svg);
+
+
+// Text
+$text-title-color: var(--text-title-color);
+$text-subtitle-color: var(--text-subtitle-color);
+$text-description-color: var(--text-description-color);
+
+
+// Alert
+
+$alert-warning-bg: var(--alert-warning-bg);
+$alert-warning-border: var(--alert-warning-border);
+$alert-warning-label: var(--alert-warning-label);
+$alert-warning-text: var(--alert-warning-text);
+
+// Menu
+
+$menu-group-color: var(--menu-group-color);
+$menu-icon-color: var(--menu-icon-color);
+$menu-icon-bg-color: var(--menu-icon-bg-color);
+$menu-icon-hover-color: var(--menu-icon-hover-color);
+$menu-text-color: var(--menu-text-color);
+$menu-text-hover-color: var(--menu-text-hover-color);
+$menu-item-bg: var(--menu-item-bg);
+$menu-item-hover-bg: var(--menu-item-hover-bg);
+$menu-item-active-bg: var(--menu-item-active-bg);
+$menu-item-active-text: var(--menu-item-active-text);
+$menu-item-active-icon: var(--menu-item-active-icon);
+$menu-item-icon-active-bg: var(--menu-item-icon-active-bg);
+$menu-item-active-icon-border: var(--menu-item-active-icon-border);
+
+// Header
+
+$header-item-bg: var(--header-item-bg);
+$header-item-hover-bg: var(--header-item-hover-bg);
+$header-icon-color: var(--header-icon-color);
+$header-icon-hover-color: var(--header-icon-hover-color);
+$header-text-color: var(--header-text-color);
+$header-text-hover-color: var(--header-text-hover-color);
+
+
+// Buttons
+
+$button-bg: var(--button-bg);
+$button-bg-hover: var(--button-bg);
+$button-text-color: var(--button-text);
+$button-border: var(--button-border);
+
+
+// Dark mode
+
+$bg-dark: #0a0a0b;
+$bg-secondary-dark: #101011;
