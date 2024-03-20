@@ -6,7 +6,9 @@ import HeaderComponent from "@/components/app/structure/header/HeaderComponent.v
 import { computed } from 'vue';
 import { useStore } from 'vuex';
 import LoadingComponent from "@/components/fragments/loading/LoadingComponent.vue";
+import {useRoute} from "vue-router";
 
+const route = useRoute();
 const store = useStore();
 const system = computed(() => store.state.system);
 
@@ -56,6 +58,8 @@ const rootStyle = computed(() => {
 });
 
 
+
+
 </script>
 
 
@@ -79,13 +83,13 @@ const rootStyle = computed(() => {
       </div>
     </div>
   </div>
-  <div v-else>
+  <div v-if="! system.security.authenticated && route.path === '/'">
     <div class="public_page" :style="rootStyle">
       <router-view></router-view>
     </div>
   </div>
 
-  <div class="modal" id="modal" v-if=" system.state.modal" :style="rootStyle">
+  <div class="modal" id="modal" v-if="system.state.modal" :style="rootStyle">
     <div class="card_modal">
       <div class="close_button">
           <img @click="store.commit('activeModal', false)" src="@/assets/img/cross.png" alt="">

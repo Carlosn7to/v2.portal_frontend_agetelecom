@@ -1,6 +1,7 @@
 {
-  "name": "portal_v2",
-  "version": "0.1.0",
+  "name": "age_colaborador",
+  "version": "0.1.1",
+    "description": "Ferramentas e utilitários internos",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",

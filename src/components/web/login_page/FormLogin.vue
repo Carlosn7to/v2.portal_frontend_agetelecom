@@ -115,12 +115,14 @@ const submit = () => {
 
 
         setTimeout(() => {
-          store.commit('setAuthenticated', true);
           Router.replace('/inicio')
+          store.commit('setAuthenticated', true);
           statusSubmit.value = false
 
-          store.commit('activeLoading', false);
-        }, 2000)
+          setTimeout(() => {
+            store.commit('activeLoading', false);
+          }, 500)
+        }, 1500)
 
       }).catch((error) => {
 

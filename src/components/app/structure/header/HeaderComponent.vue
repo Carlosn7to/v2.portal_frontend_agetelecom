@@ -43,7 +43,7 @@ export default {
       </div>
       <div class="person">
         <span>Olá, <b>{{ user.name }}</b></span>
-        <img src="https://www.citrix.com/blogs/wp-content/uploads/2018/03/slack_compressed-e1521621363404-360x360.jpg" alt="user">
+        <img :src="require('@/assets/img/user.png')" alt="">
       </div>
     </div>
   </div>
