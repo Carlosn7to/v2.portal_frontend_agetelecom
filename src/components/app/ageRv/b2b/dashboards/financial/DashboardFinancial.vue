@@ -7,7 +7,7 @@ import GraphTopSellersDashboardFinancial
 import NavigatePeriod from "@/components/app/ageRv/b2b/dashboards/financial/NavigatePeriod.vue";
 import OptionsManagementDashboardFinancial
   from "@/components/app/ageRv/b2b/dashboards/financial/OptionsManagementDashboardFinancial.vue";
-import {onMounted, ref} from "vue";
+import {onBeforeMount, ref} from "vue";
 import AuditSalesDashboardFinancial
   from "@/components/app/ageRv/b2b/dashboards/financial/AuditSalesDashboardFinancial.vue";
 import {AXIOS} from "../../../../../../../services/api.ts";
@@ -55,7 +55,7 @@ const getData = () => {
       });
 };
 
-onMounted(() => {
+onBeforeMount(() => {
   getData();
 });
 

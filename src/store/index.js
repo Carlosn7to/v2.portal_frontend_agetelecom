@@ -1,6 +1,7 @@
 import { createStore } from 'vuex'
 import createPersistedState from "vuex-persistedstate";
-import Router from "@/router";
+import {AXIOS} from "../../services/api.ts";
+import Cookie from "js-cookie";
 export default createStore({
   state: {
     user: {
@@ -161,15 +162,32 @@ export default createStore({
     }
   },
   actions: {
-    logout({ commit }) {
+    logout({commit}) {
       commit('setUserName', '')
       commit('setAuthenticated', false)
-      Router.replace('/')
+      Cookie.remove('token')
     },
-    validateToken({ commit }, {token}) {
+    async validateToken({ commit }, { token }) {
+      if (token === '' || token === undefined) {
+        commit('setAuthenticated', false);
+      } else {
+        try {
+          const response = await AXIOS({
+            method: 'post',
+            url: 'auth/refresh',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer ' + token
+            }
+          });
 
-      if(token === '' || token === undefined) {
-        commit('setAuthenticated', false)
+          commit('setAuthenticated', true);
+          commit('setUserName', response.data.user.name);
+          Cookie.set('token', response.data.access_token, { expires: 1 });
+        } catch (error) {
+          commit('setAuthenticated', false);
+          commit('setUserName', '');
+        }
       }
     }
   },

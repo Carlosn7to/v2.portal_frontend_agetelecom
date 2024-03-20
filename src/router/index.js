@@ -58,7 +58,11 @@ router.beforeEach(async (to, from, next) => {
   const auth = useStore().getters['system'].security.authenticated;
 
   if (token) {
-    useStore().dispatch('validateToken', {token});
+    try {
+      await useStore().dispatch('validateToken', { token });
+    } catch (error) {
+      console.error('Erro ao validar o token:', error);
+    }
   } else {
     useStore().commit('setAuthenticated', false);
   }
