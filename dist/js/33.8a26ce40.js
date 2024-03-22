@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkage_colaborador"]=self["webpackChunkage_colaborador"]||[]).push([[33],{6033:function(r,a,e){e.r(a),e.d(a,{default:function(){return d}});var c=e(6768);const n={class:"report_page"};function o(r,a){return(0,c.uX)(),(0,c.CE)("div",n)}var t=e(1241);const u={},s=(0,t.A)(u,[["render",o],["__scopeId","data-v-6c45ed54"]]);var d=s}}]);
+//# sourceMappingURL=33.8a26ce40.js.map

@@ -17,15 +17,15 @@ const cards = ref([
       },
       {
         title: 'Painel gerencial',
-        status: false
+        status: true
       },
       {
         title: 'Relatórios',
-        status: false
+        status: true
       },
       {
         title: 'Gerenciamento',
-        status: false
+        status: true
       }
     ],
     icon: 'b2b',
@@ -48,7 +48,7 @@ const cards = ref([
       },
       {
         title: 'Planeje, execute e controle',
-        status: false
+        status: true
       }
     ],
     icon: 'agereport',

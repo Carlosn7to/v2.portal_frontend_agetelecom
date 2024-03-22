@@ -68,9 +68,9 @@ const commissionPercent = (type, salesCount, meta) => {
 
   if (type === 'interprise') {
 
-    if (salesCount === 10) {
+    if (salesCount >= 10 && salesCount < 15) {
       percent = 30;
-    } else if (salesCount === 15) {
+    } else if (salesCount >= 15 && salesCount < 25) {
       percent = 50;
     } else if (salesCount >= 25) {
       percent = 60;
